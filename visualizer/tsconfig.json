@@ -1,0 +1,26 @@
+{
+    // "compileOnSave": false,
+    "compilerOptions": {
+      "baseUrl": "./src/",
+      "sourceMap": true,
+      "declaration": true,
+      "declarationDir": "build/declarations",
+      "module": "es2020",
+      "moduleResolution": "node",
+      "strict": false,
+      "noImplicitAny": false,
+      "noImplicitReturns": false,
+      "noImplicitThis": false,
+      "noUnusedLocals": false,
+      "noUnusedParameters": true,
+      "alwaysStrict": true,
+      "target": "es6",
+      "experimentalDecorators": true,
+      "typeRoots": ["node_modules/@types"],
+      "lib": ["es2020", "dom"],
+      "plugins": [],
+      "types": ["three"]
+    },
+    "include": ["src/**/*.ts",  "src/custom-types.d.ts", "src/**/*.frag", "src/**/*.vert"],
+    "exclude": ["build", "node_modules"]
+  }

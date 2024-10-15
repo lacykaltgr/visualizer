@@ -1,0 +1,2706 @@
+{
+  "object_1": {
+    "id": 10,
+    "object_tag": "couch",
+    "bbox_extent": [
+      3.89,
+      1.26,
+      0.64
+    ],
+    "bbox_center": [
+      -9.72,
+      11.04,
+      0.63
+    ],
+    "bbox_volume": 3.14,
+    "n_points": 10728
+  },
+  "object_2": {
+    "id": 135,
+    "object_tag": "potted plant",
+    "bbox_extent": [
+      1.07,
+      1.01,
+      0.91
+    ],
+    "bbox_center": [
+      -2.06,
+      -11.15,
+      1.18
+    ],
+    "bbox_volume": 0.98,
+    "n_points": 4722
+  },
+  "object_3": {
+    "id": 147,
+    "object_tag": "potted plant",
+    "bbox_extent": [
+      1.52,
+      1.08,
+      0.9
+    ],
+    "bbox_center": [
+      4.3,
+      -11.16,
+      0.81
+    ],
+    "bbox_volume": 1.48,
+    "n_points": 6295
+  },
+  "object_4": {
+    "id": 151,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      2.22,
+      1.24,
+      0.87
+    ],
+    "bbox_center": [
+      4.07,
+      -9.5,
+      0.49
+    ],
+    "bbox_volume": 2.39,
+    "n_points": 16238
+  },
+  "object_5": {
+    "id": 184,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      2.19,
+      1.16,
+      0.45
+    ],
+    "bbox_center": [
+      2.38,
+      -6.41,
+      0.59
+    ],
+    "bbox_volume": 1.14,
+    "n_points": 7059
+  },
+  "object_6": {
+    "id": 244,
+    "object_tag": "couch",
+    "bbox_extent": [
+      2.09,
+      1.12,
+      0.54
+    ],
+    "bbox_center": [
+      0.33,
+      -6.47,
+      0.55
+    ],
+    "bbox_volume": 1.26,
+    "n_points": 6552
+  },
+  "object_7": {
+    "id": 332,
+    "object_tag": "trash bin",
+    "bbox_extent": [
+      0.75,
+      0.43,
+      0.29
+    ],
+    "bbox_center": [
+      -7.38,
+      -11.37,
+      0.41
+    ],
+    "bbox_volume": 0.09,
+    "n_points": 1260
+  },
+  "object_8": {
+    "id": 489,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      2.36,
+      0.99,
+      0.64
+    ],
+    "bbox_center": [
+      1.06,
+      11.39,
+      0.61
+    ],
+    "bbox_volume": 1.5,
+    "n_points": 3294
+  },
+  "object_9": {
+    "id": 530,
+    "object_tag": "picture",
+    "bbox_extent": [
+      1.46,
+      0.47,
+      0.1
+    ],
+    "bbox_center": [
+      -9.49,
+      11.71,
+      1.97
+    ],
+    "bbox_volume": 0.07,
+    "n_points": 3002
+  },
+  "object_10": {
+    "id": 547,
+    "object_tag": "potted plant",
+    "bbox_extent": [
+      1.51,
+      0.85,
+      0.88
+    ],
+    "bbox_center": [
+      -0.59,
+      11.0,
+      0.83
+    ],
+    "bbox_volume": 1.13,
+    "n_points": 3622
+  },
+  "object_11": {
+    "id": 557,
+    "object_tag": "potted plant",
+    "bbox_extent": [
+      1.76,
+      1.46,
+      1.26
+    ],
+    "bbox_center": [
+      3.97,
+      5.47,
+      0.94
+    ],
+    "bbox_volume": 3.24,
+    "n_points": 7907
+  },
+  "object_12": {
+    "id": 639,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      2.25,
+      1.2,
+      0.65
+    ],
+    "bbox_center": [
+      2.98,
+      11.35,
+      0.58
+    ],
+    "bbox_volume": 1.76,
+    "n_points": 4993
+  },
+  "object_13": {
+    "id": 649,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      2.23,
+      1.18,
+      0.77
+    ],
+    "bbox_center": [
+      1.11,
+      11.28,
+      0.57
+    ],
+    "bbox_volume": 2.03,
+    "n_points": 6976
+  },
+  "object_14": {
+    "id": 679,
+    "object_tag": "potted plant",
+    "bbox_extent": [
+      1.75,
+      1.46,
+      1.17
+    ],
+    "bbox_center": [
+      3.99,
+      5.49,
+      0.93
+    ],
+    "bbox_volume": 2.99,
+    "n_points": 9147
+  },
+  "object_15": {
+    "id": 680,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      2.28,
+      1.22,
+      0.64
+    ],
+    "bbox_center": [
+      3.09,
+      11.24,
+      0.59
+    ],
+    "bbox_volume": 1.78,
+    "n_points": 9686
+  },
+  "object_16": {
+    "id": 682,
+    "object_tag": "shelf",
+    "bbox_extent": [
+      1.62,
+      0.21,
+      0.08
+    ],
+    "bbox_center": [
+      5.97,
+      10.93,
+      0.96
+    ],
+    "bbox_volume": 0.03,
+    "n_points": 455
+  },
+  "object_17": {
+    "id": 980,
+    "object_tag": "picture",
+    "bbox_extent": [
+      1.46,
+      0.48,
+      0.06
+    ],
+    "bbox_center": [
+      -9.59,
+      11.61,
+      1.98
+    ],
+    "bbox_volume": 0.04,
+    "n_points": 1410
+  },
+  "object_18": {
+    "id": 1094,
+    "object_tag": "trash bin",
+    "bbox_extent": [
+      0.78,
+      0.34,
+      0.25
+    ],
+    "bbox_center": [
+      -7.47,
+      -11.34,
+      0.48
+    ],
+    "bbox_volume": 0.07,
+    "n_points": 1211
+  },
+  "object_19": {
+    "id": 1184,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      2.29,
+      1.25,
+      1.18
+    ],
+    "bbox_center": [
+      0.44,
+      -6.39,
+      0.42
+    ],
+    "bbox_volume": 3.38,
+    "n_points": 5834
+  },
+  "object_20": {
+    "id": 1379,
+    "object_tag": "potted plant",
+    "bbox_extent": [
+      1.53,
+      0.82,
+      0.09
+    ],
+    "bbox_center": [
+      -1.03,
+      11.87,
+      0.94
+    ],
+    "bbox_volume": 0.11,
+    "n_points": 1172
+  },
+  "object_21": {
+    "id": 8,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      2.02,
+      1.23,
+      1.03
+    ],
+    "bbox_center": [
+      -2.3,
+      -9.41,
+      0.56
+    ],
+    "bbox_volume": 2.56,
+    "n_points": 4057
+  },
+  "object_22": {
+    "id": 37,
+    "object_tag": "tv",
+    "bbox_extent": [
+      0.64,
+      0.17,
+      0.08
+    ],
+    "bbox_center": [
+      -2.29,
+      1.23,
+      1.25
+    ],
+    "bbox_volume": 0.01,
+    "n_points": 419
+  },
+  "object_23": {
+    "id": 55,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      2.23,
+      1.17,
+      0.9
+    ],
+    "bbox_center": [
+      -8.39,
+      11.33,
+      0.5
+    ],
+    "bbox_volume": 2.35,
+    "n_points": 5809
+  },
+  "object_24": {
+    "id": 88,
+    "object_tag": "potted plant",
+    "bbox_extent": [
+      1.51,
+      0.94,
+      1.09
+    ],
+    "bbox_center": [
+      -5.68,
+      10.89,
+      0.8
+    ],
+    "bbox_volume": 1.55,
+    "n_points": 7430
+  },
+  "object_25": {
+    "id": 93,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      2.39,
+      1.31,
+      1.05
+    ],
+    "bbox_center": [
+      1.05,
+      11.3,
+      0.52
+    ],
+    "bbox_volume": 3.29,
+    "n_points": 16795
+  },
+  "object_26": {
+    "id": 192,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      2.45,
+      1.34,
+      0.8
+    ],
+    "bbox_center": [
+      -19.61,
+      6.67,
+      0.55
+    ],
+    "bbox_volume": 2.63,
+    "n_points": 5480
+  },
+  "object_27": {
+    "id": 235,
+    "object_tag": "trash can",
+    "bbox_extent": [
+      1.06,
+      0.7,
+      0.38
+    ],
+    "bbox_center": [
+      -15.94,
+      35.47,
+      0.41
+    ],
+    "bbox_volume": 0.28,
+    "n_points": 1120
+  },
+  "object_28": {
+    "id": 264,
+    "object_tag": "desk",
+    "bbox_extent": [
+      3.71,
+      0.94,
+      0.79
+    ],
+    "bbox_center": [
+      -17.89,
+      35.52,
+      0.49
+    ],
+    "bbox_volume": 2.76,
+    "n_points": 4888
+  },
+  "object_29": {
+    "id": 267,
+    "object_tag": "trash can",
+    "bbox_extent": [
+      0.38,
+      0.34,
+      0.35
+    ],
+    "bbox_center": [
+      -22.91,
+      35.25,
+      0.27
+    ],
+    "bbox_volume": 0.05,
+    "n_points": 558
+  },
+  "object_30": {
+    "id": 283,
+    "object_tag": "coffee table",
+    "bbox_extent": [
+      1.49,
+      0.78,
+      0.61
+    ],
+    "bbox_center": [
+      -20.62,
+      25.85,
+      0.29
+    ],
+    "bbox_volume": 0.71,
+    "n_points": 3207
+  },
+  "object_31": {
+    "id": 284,
+    "object_tag": "book",
+    "bbox_extent": [
+      0.67,
+      0.49,
+      0.11
+    ],
+    "bbox_center": [
+      -20.84,
+      25.89,
+      0.5
+    ],
+    "bbox_volume": 0.04,
+    "n_points": 369
+  },
+  "object_32": {
+    "id": 286,
+    "object_tag": "trash can",
+    "bbox_extent": [
+      0.34,
+      0.34,
+      0.33
+    ],
+    "bbox_center": [
+      -19.87,
+      35.09,
+      0.25
+    ],
+    "bbox_volume": 0.04,
+    "n_points": 495
+  },
+  "object_33": {
+    "id": 384,
+    "object_tag": "desk",
+    "bbox_extent": [
+      1.65,
+      1.17,
+      1.06
+    ],
+    "bbox_center": [
+      -18.93,
+      35.81,
+      0.63
+    ],
+    "bbox_volume": 2.05,
+    "n_points": 4065
+  },
+  "object_34": {
+    "id": 404,
+    "object_tag": "lamp",
+    "bbox_extent": [
+      1.37,
+      1.23,
+      0.09
+    ],
+    "bbox_center": [
+      -20.05,
+      40.02,
+      3.09
+    ],
+    "bbox_volume": 0.15,
+    "n_points": 3613
+  },
+  "object_35": {
+    "id": 422,
+    "object_tag": "tv",
+    "bbox_extent": [
+      0.77,
+      0.5,
+      0.15
+    ],
+    "bbox_center": [
+      -17.97,
+      38.57,
+      1.1
+    ],
+    "bbox_volume": 0.06,
+    "n_points": 1341
+  },
+  "object_36": {
+    "id": 425,
+    "object_tag": "tv",
+    "bbox_extent": [
+      0.87,
+      0.52,
+      0.21
+    ],
+    "bbox_center": [
+      -17.65,
+      38.48,
+      1.11
+    ],
+    "bbox_volume": 0.1,
+    "n_points": 2203
+  },
+  "object_37": {
+    "id": 429,
+    "object_tag": "trash bin",
+    "bbox_extent": [
+      0.63,
+      0.53,
+      0.49
+    ],
+    "bbox_center": [
+      -19.54,
+      41.16,
+      0.18
+    ],
+    "bbox_volume": 0.16,
+    "n_points": 1194
+  },
+  "object_38": {
+    "id": 511,
+    "object_tag": "desk",
+    "bbox_extent": [
+      7.9,
+      2.03,
+      1.09
+    ],
+    "bbox_center": [
+      -18.3,
+      39.39,
+      0.43
+    ],
+    "bbox_volume": 17.48,
+    "n_points": 10024
+  },
+  "object_39": {
+    "id": 520,
+    "object_tag": "trash bin",
+    "bbox_extent": [
+      0.65,
+      0.47,
+      0.35
+    ],
+    "bbox_center": [
+      -19.67,
+      41.26,
+      0.18
+    ],
+    "bbox_volume": 0.11,
+    "n_points": 894
+  },
+  "object_40": {
+    "id": 529,
+    "object_tag": "cabinet",
+    "bbox_extent": [
+      1.04,
+      0.9,
+      0.6
+    ],
+    "bbox_center": [
+      -19.11,
+      41.14,
+      0.38
+    ],
+    "bbox_volume": 0.56,
+    "n_points": 4721
+  },
+  "object_41": {
+    "id": 531,
+    "object_tag": "trash bin",
+    "bbox_extent": [
+      5.32,
+      1.16,
+      1.48
+    ],
+    "bbox_center": [
+      -17.31,
+      40.49,
+      0.41
+    ],
+    "bbox_volume": 9.13,
+    "n_points": 8606
+  },
+  "object_42": {
+    "id": 545,
+    "object_tag": "trash bin",
+    "bbox_extent": [
+      0.8,
+      0.39,
+      0.54
+    ],
+    "bbox_center": [
+      -19.05,
+      44.81,
+      0.21
+    ],
+    "bbox_volume": 0.17,
+    "n_points": 1590
+  },
+  "object_43": {
+    "id": 560,
+    "object_tag": "trash bin",
+    "bbox_extent": [
+      2.22,
+      0.68,
+      0.56
+    ],
+    "bbox_center": [
+      -21.11,
+      45.05,
+      0.15
+    ],
+    "bbox_volume": 0.85,
+    "n_points": 2192
+  },
+  "object_44": {
+    "id": 647,
+    "object_tag": "shelf",
+    "bbox_extent": [
+      0.81,
+      0.65,
+      0.63
+    ],
+    "bbox_center": [
+      -21.45,
+      45.53,
+      0.41
+    ],
+    "bbox_volume": 0.33,
+    "n_points": 4294
+  },
+  "object_45": {
+    "id": 717,
+    "object_tag": "box",
+    "bbox_extent": [
+      0.44,
+      0.45,
+      0.35
+    ],
+    "bbox_center": [
+      -21.5,
+      45.47,
+      0.84
+    ],
+    "bbox_volume": 0.07,
+    "n_points": 449
+  },
+  "object_46": {
+    "id": 728,
+    "object_tag": "shelf",
+    "bbox_extent": [
+      2.32,
+      0.61,
+      0.29
+    ],
+    "bbox_center": [
+      -16.14,
+      59.84,
+      2.03
+    ],
+    "bbox_volume": 0.41,
+    "n_points": 2254
+  },
+  "object_47": {
+    "id": 739,
+    "object_tag": "lamp",
+    "bbox_extent": [
+      3.36,
+      3.34,
+      0.08
+    ],
+    "bbox_center": [
+      -16.51,
+      56.06,
+      3.11
+    ],
+    "bbox_volume": 0.9,
+    "n_points": 11196
+  },
+  "object_48": {
+    "id": 747,
+    "object_tag": "tv",
+    "bbox_extent": [
+      1.68,
+      0.96,
+      0.3
+    ],
+    "bbox_center": [
+      -11.18,
+      55.3,
+      1.94
+    ],
+    "bbox_volume": 0.48,
+    "n_points": 10586
+  },
+  "object_49": {
+    "id": 750,
+    "object_tag": "tv stand",
+    "bbox_extent": [
+      2.06,
+      1.16,
+      0.71
+    ],
+    "bbox_center": [
+      -16.58,
+      56.42,
+      0.42
+    ],
+    "bbox_volume": 1.7,
+    "n_points": 5740
+  },
+  "object_50": {
+    "id": 756,
+    "object_tag": "desk",
+    "bbox_extent": [
+      2.19,
+      1.03,
+      0.83
+    ],
+    "bbox_center": [
+      -17.64,
+      55.78,
+      0.68
+    ],
+    "bbox_volume": 1.87,
+    "n_points": 1587
+  },
+  "object_51": {
+    "id": 759,
+    "object_tag": "shelf",
+    "bbox_extent": [
+      2.7,
+      0.7,
+      0.59
+    ],
+    "bbox_center": [
+      -11.47,
+      55.32,
+      0.31
+    ],
+    "bbox_volume": 1.12,
+    "n_points": 9165
+  },
+  "object_52": {
+    "id": 760,
+    "object_tag": "potted plant",
+    "bbox_extent": [
+      1.21,
+      1.31,
+      1.07
+    ],
+    "bbox_center": [
+      -11.36,
+      50.36,
+      1.44
+    ],
+    "bbox_volume": 1.7,
+    "n_points": 8280
+  },
+  "object_53": {
+    "id": 787,
+    "object_tag": "trash bin",
+    "bbox_extent": [
+      0.67,
+      0.45,
+      0.56
+    ],
+    "bbox_center": [
+      -16.12,
+      46.33,
+      0.18
+    ],
+    "bbox_volume": 0.17,
+    "n_points": 1702
+  },
+  "object_54": {
+    "id": 904,
+    "object_tag": "picture",
+    "bbox_extent": [
+      0.52,
+      0.46,
+      0.08
+    ],
+    "bbox_center": [
+      -11.06,
+      49.51,
+      1.87
+    ],
+    "bbox_volume": 0.02,
+    "n_points": 672
+  },
+  "object_55": {
+    "id": 907,
+    "object_tag": "shelf",
+    "bbox_extent": [
+      3.92,
+      2.56,
+      0.55
+    ],
+    "bbox_center": [
+      -7.03,
+      41.92,
+      1.25
+    ],
+    "bbox_volume": 5.52,
+    "n_points": 11151
+  },
+  "object_56": {
+    "id": 908,
+    "object_tag": "shelf",
+    "bbox_extent": [
+      0.99,
+      0.61,
+      0.59
+    ],
+    "bbox_center": [
+      -14.1,
+      45.21,
+      0.5
+    ],
+    "bbox_volume": 0.36,
+    "n_points": 1531
+  },
+  "object_57": {
+    "id": 922,
+    "object_tag": "folded chair",
+    "bbox_extent": [
+      0.41,
+      0.34,
+      0.31
+    ],
+    "bbox_center": [
+      -14.07,
+      45.18,
+      0.77
+    ],
+    "bbox_volume": 0.04,
+    "n_points": 483
+  },
+  "object_58": {
+    "id": 956,
+    "object_tag": "cabinet",
+    "bbox_extent": [
+      3.82,
+      2.43,
+      0.47
+    ],
+    "bbox_center": [
+      -7.08,
+      41.77,
+      1.2
+    ],
+    "bbox_volume": 4.36,
+    "n_points": 14104
+  },
+  "object_59": {
+    "id": 957,
+    "object_tag": "chair",
+    "bbox_extent": [
+      1.18,
+      0.89,
+      0.53
+    ],
+    "bbox_center": [
+      -8.02,
+      45.03,
+      0.57
+    ],
+    "bbox_volume": 0.56,
+    "n_points": 2166
+  },
+  "object_60": {
+    "id": 974,
+    "object_tag": "desk",
+    "bbox_extent": [
+      1.92,
+      1.03,
+      1.03
+    ],
+    "bbox_center": [
+      -16.72,
+      36.18,
+      0.52
+    ],
+    "bbox_volume": 2.04,
+    "n_points": 1363
+  },
+  "object_61": {
+    "id": 975,
+    "object_tag": "box",
+    "bbox_extent": [
+      0.53,
+      0.52,
+      0.39
+    ],
+    "bbox_center": [
+      -16.76,
+      38.06,
+      0.9
+    ],
+    "bbox_volume": 0.11,
+    "n_points": 841
+  },
+  "object_62": {
+    "id": 1094,
+    "object_tag": "trash can",
+    "bbox_extent": [
+      0.41,
+      0.4,
+      0.44
+    ],
+    "bbox_center": [
+      -11.53,
+      34.24,
+      0.21
+    ],
+    "bbox_volume": 0.07,
+    "n_points": 935
+  },
+  "object_63": {
+    "id": 1102,
+    "object_tag": "trash bin",
+    "bbox_extent": [
+      0.47,
+      0.49,
+      0.33
+    ],
+    "bbox_center": [
+      -15.78,
+      35.96,
+      0.22
+    ],
+    "bbox_volume": 0.08,
+    "n_points": 650
+  },
+  "object_64": {
+    "id": 1105,
+    "object_tag": "cabinet",
+    "bbox_extent": [
+      0.71,
+      0.66,
+      0.43
+    ],
+    "bbox_center": [
+      -17.17,
+      39.75,
+      0.36
+    ],
+    "bbox_volume": 0.2,
+    "n_points": 1241
+  },
+  "object_65": {
+    "id": 1288,
+    "object_tag": "trash can",
+    "bbox_extent": [
+      0.88,
+      0.55,
+      0.59
+    ],
+    "bbox_center": [
+      -22.81,
+      35.28,
+      0.2
+    ],
+    "bbox_volume": 0.29,
+    "n_points": 2054
+  },
+  "object_66": {
+    "id": 1298,
+    "object_tag": "storage bin",
+    "bbox_extent": [
+      0.35,
+      0.42,
+      0.37
+    ],
+    "bbox_center": [
+      -19.7,
+      35.1,
+      0.2
+    ],
+    "bbox_volume": 0.05,
+    "n_points": 800
+  },
+  "object_67": {
+    "id": 1306,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      2.13,
+      1.03,
+      0.9
+    ],
+    "bbox_center": [
+      -20.49,
+      24.49,
+      0.55
+    ],
+    "bbox_volume": 1.97,
+    "n_points": 4727
+  },
+  "object_68": {
+    "id": 1352,
+    "object_tag": "couch",
+    "bbox_extent": [
+      2.12,
+      0.96,
+      0.86
+    ],
+    "bbox_center": [
+      -20.34,
+      24.44,
+      0.59
+    ],
+    "bbox_volume": 1.75,
+    "n_points": 6361
+  },
+  "object_69": {
+    "id": 1394,
+    "object_tag": "picture",
+    "bbox_extent": [
+      1.55,
+      0.49,
+      0.07
+    ],
+    "bbox_center": [
+      -5.14,
+      31.71,
+      1.74
+    ],
+    "bbox_volume": 0.05,
+    "n_points": 1829
+  },
+  "object_70": {
+    "id": 1399,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      2.06,
+      1.23,
+      0.6
+    ],
+    "bbox_center": [
+      -5.84,
+      32.4,
+      0.54
+    ],
+    "bbox_volume": 1.52,
+    "n_points": 2416
+  },
+  "object_71": {
+    "id": 1436,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      1.66,
+      1.32,
+      1.1
+    ],
+    "bbox_center": [
+      -5.64,
+      30.4,
+      0.49
+    ],
+    "bbox_volume": 2.41,
+    "n_points": 5562
+  },
+  "object_72": {
+    "id": 1437,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      1.48,
+      1.26,
+      0.7
+    ],
+    "bbox_center": [
+      -5.75,
+      32.66,
+      0.56
+    ],
+    "bbox_volume": 1.31,
+    "n_points": 4322
+  },
+  "object_73": {
+    "id": 1443,
+    "object_tag": "coffee table",
+    "bbox_extent": [
+      1.59,
+      0.98,
+      0.65
+    ],
+    "bbox_center": [
+      -5.55,
+      31.58,
+      0.32
+    ],
+    "bbox_volume": 1.01,
+    "n_points": 2650
+  },
+  "object_74": {
+    "id": 1485,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      1.35,
+      1.32,
+      1.04
+    ],
+    "bbox_center": [
+      -5.75,
+      32.74,
+      0.43
+    ],
+    "bbox_volume": 1.85,
+    "n_points": 3906
+  },
+  "object_75": {
+    "id": 1493,
+    "object_tag": "tv",
+    "bbox_extent": [
+      1.52,
+      1.03,
+      0.23
+    ],
+    "bbox_center": [
+      -8.14,
+      34.16,
+      1.27
+    ],
+    "bbox_volume": 0.36,
+    "n_points": 3315
+  },
+  "object_76": {
+    "id": 1499,
+    "object_tag": "closet wall",
+    "bbox_extent": [
+      5.22,
+      0.82,
+      0.47
+    ],
+    "bbox_center": [
+      -7.88,
+      34.09,
+      0.47
+    ],
+    "bbox_volume": 2.01,
+    "n_points": 7049
+  },
+  "object_77": {
+    "id": 1510,
+    "object_tag": "potted plant",
+    "bbox_extent": [
+      1.47,
+      0.93,
+      0.84
+    ],
+    "bbox_center": [
+      -11.26,
+      33.31,
+      0.77
+    ],
+    "bbox_volume": 1.15,
+    "n_points": 2807
+  },
+  "object_78": {
+    "id": 1620,
+    "object_tag": "trash bin",
+    "bbox_extent": [
+      0.7,
+      0.53,
+      0.21
+    ],
+    "bbox_center": [
+      -14.02,
+      44.98,
+      0.45
+    ],
+    "bbox_volume": 0.08,
+    "n_points": 960
+  },
+  "object_79": {
+    "id": 1702,
+    "object_tag": "tv",
+    "bbox_extent": [
+      0.77,
+      0.51,
+      0.03
+    ],
+    "bbox_center": [
+      -17.61,
+      36.99,
+      1.08
+    ],
+    "bbox_volume": 0.01,
+    "n_points": 752
+  },
+  "object_80": {
+    "id": 1704,
+    "object_tag": "desk",
+    "bbox_extent": [
+      1.85,
+      1.01,
+      0.72
+    ],
+    "bbox_center": [
+      -17.32,
+      37.07,
+      0.64
+    ],
+    "bbox_volume": 1.35,
+    "n_points": 2108
+  },
+  "object_81": {
+    "id": 1723,
+    "object_tag": "trash bin",
+    "bbox_extent": [
+      1.02,
+      0.89,
+      0.52
+    ],
+    "bbox_center": [
+      -14.2,
+      45.08,
+      0.43
+    ],
+    "bbox_volume": 0.47,
+    "n_points": 2016
+  },
+  "object_82": {
+    "id": 1724,
+    "object_tag": "desk",
+    "bbox_extent": [
+      0.81,
+      0.7,
+      0.48
+    ],
+    "bbox_center": [
+      -15.75,
+      35.66,
+      0.41
+    ],
+    "bbox_volume": 0.27,
+    "n_points": 994
+  },
+  "object_83": {
+    "id": 1758,
+    "object_tag": "cabinet",
+    "bbox_extent": [
+      0.69,
+      0.61,
+      0.46
+    ],
+    "bbox_center": [
+      -16.7,
+      38.02,
+      0.36
+    ],
+    "bbox_volume": 0.19,
+    "n_points": 1234
+  },
+  "object_84": {
+    "id": 1764,
+    "object_tag": "cabinet",
+    "bbox_extent": [
+      0.77,
+      0.72,
+      0.42
+    ],
+    "bbox_center": [
+      -17.11,
+      37.49,
+      0.37
+    ],
+    "bbox_volume": 0.23,
+    "n_points": 1145
+  },
+  "object_85": {
+    "id": 1767,
+    "object_tag": "desk",
+    "bbox_extent": [
+      5.18,
+      0.9,
+      0.88
+    ],
+    "bbox_center": [
+      -17.33,
+      41.11,
+      0.48
+    ],
+    "bbox_volume": 4.1,
+    "n_points": 4011
+  },
+  "object_86": {
+    "id": 1769,
+    "object_tag": "tv",
+    "bbox_extent": [
+      0.77,
+      0.49,
+      0.13
+    ],
+    "bbox_center": [
+      -17.66,
+      44.26,
+      1.12
+    ],
+    "bbox_volume": 0.05,
+    "n_points": 1224
+  },
+  "object_87": {
+    "id": 1812,
+    "object_tag": "tv",
+    "bbox_extent": [
+      0.93,
+      0.54,
+      0.18
+    ],
+    "bbox_center": [
+      -18.02,
+      43.37,
+      1.1
+    ],
+    "bbox_volume": 0.09,
+    "n_points": 1444
+  },
+  "object_88": {
+    "id": 1813,
+    "object_tag": "trash can",
+    "bbox_extent": [
+      0.35,
+      0.29,
+      0.31
+    ],
+    "bbox_center": [
+      -16.85,
+      44.69,
+      0.23
+    ],
+    "bbox_volume": 0.03,
+    "n_points": 455
+  },
+  "object_89": {
+    "id": 1834,
+    "object_tag": "storage bin",
+    "bbox_extent": [
+      0.63,
+      0.41,
+      0.2
+    ],
+    "bbox_center": [
+      -11.15,
+      54.11,
+      0.35
+    ],
+    "bbox_volume": 0.05,
+    "n_points": 592
+  },
+  "object_90": {
+    "id": 1930,
+    "object_tag": "desk",
+    "bbox_extent": [
+      4.97,
+      2.74,
+      0.99
+    ],
+    "bbox_center": [
+      -15.92,
+      44.5,
+      0.41
+    ],
+    "bbox_volume": 13.48,
+    "n_points": 4010
+  },
+  "object_91": {
+    "id": 2057,
+    "object_tag": "cabinet",
+    "bbox_extent": [
+      2.63,
+      0.82,
+      0.56
+    ],
+    "bbox_center": [
+      -11.59,
+      49.55,
+      0.46
+    ],
+    "bbox_volume": 1.21,
+    "n_points": 3975
+  },
+  "object_92": {
+    "id": 2073,
+    "object_tag": "storage bin",
+    "bbox_extent": [
+      2.45,
+      0.57,
+      0.55
+    ],
+    "bbox_center": [
+      -11.83,
+      55.34,
+      0.3
+    ],
+    "bbox_volume": 0.77,
+    "n_points": 1503
+  },
+  "object_93": {
+    "id": 2147,
+    "object_tag": "desk",
+    "bbox_extent": [
+      1.84,
+      1.15,
+      0.65
+    ],
+    "bbox_center": [
+      -16.37,
+      56.14,
+      0.52
+    ],
+    "bbox_volume": 1.38,
+    "n_points": 2948
+  },
+  "object_94": {
+    "id": 2250,
+    "object_tag": "chair",
+    "bbox_extent": [
+      0.97,
+      0.68,
+      0.55
+    ],
+    "bbox_center": [
+      -21.44,
+      45.51,
+      0.6
+    ],
+    "bbox_volume": 0.36,
+    "n_points": 1885
+  },
+  "object_95": {
+    "id": 2291,
+    "object_tag": "tv",
+    "bbox_extent": [
+      0.99,
+      0.54,
+      0.06
+    ],
+    "bbox_center": [
+      -16.76,
+      44.77,
+      1.13
+    ],
+    "bbox_volume": 0.03,
+    "n_points": 1141
+  },
+  "object_96": {
+    "id": 2292,
+    "object_tag": "tv",
+    "bbox_extent": [
+      1.02,
+      0.57,
+      0.13
+    ],
+    "bbox_center": [
+      -18.15,
+      44.74,
+      1.12
+    ],
+    "bbox_volume": 0.08,
+    "n_points": 1129
+  },
+  "object_97": {
+    "id": 2297,
+    "object_tag": "lamp",
+    "bbox_extent": [
+      3.31,
+      1.16,
+      0.05
+    ],
+    "bbox_center": [
+      -16.19,
+      46.83,
+      3.11
+    ],
+    "bbox_volume": 0.19,
+    "n_points": 5342
+  },
+  "object_98": {
+    "id": 2384,
+    "object_tag": "trash bin",
+    "bbox_extent": [
+      1.09,
+      0.52,
+      0.48
+    ],
+    "bbox_center": [
+      -16.93,
+      44.34,
+      0.18
+    ],
+    "bbox_volume": 0.27,
+    "n_points": 902
+  },
+  "object_99": {
+    "id": 2390,
+    "object_tag": "file cabinet",
+    "bbox_extent": [
+      0.73,
+      0.68,
+      0.58
+    ],
+    "bbox_center": [
+      -19.2,
+      45.22,
+      0.38
+    ],
+    "bbox_volume": 0.29,
+    "n_points": 1484
+  },
+  "object_100": {
+    "id": 2416,
+    "object_tag": "desk",
+    "bbox_extent": [
+      3.45,
+      1.31,
+      0.77
+    ],
+    "bbox_center": [
+      -16.21,
+      44.93,
+      0.71
+    ],
+    "bbox_volume": 3.48,
+    "n_points": 2445
+  },
+  "object_101": {
+    "id": 2439,
+    "object_tag": "tv",
+    "bbox_extent": [
+      0.69,
+      0.47,
+      0.04
+    ],
+    "bbox_center": [
+      -18.37,
+      44.79,
+      1.1
+    ],
+    "bbox_volume": 0.01,
+    "n_points": 709
+  },
+  "object_102": {
+    "id": 2453,
+    "object_tag": "cabinet",
+    "bbox_extent": [
+      0.75,
+      0.7,
+      0.53
+    ],
+    "bbox_center": [
+      -14.31,
+      45.14,
+      0.39
+    ],
+    "bbox_volume": 0.28,
+    "n_points": 1316
+  },
+  "object_103": {
+    "id": 2461,
+    "object_tag": "speaker",
+    "bbox_extent": [
+      0.49,
+      0.45,
+      0.17
+    ],
+    "bbox_center": [
+      -21.03,
+      45.12,
+      0.98
+    ],
+    "bbox_volume": 0.04,
+    "n_points": 446
+  },
+  "object_104": {
+    "id": 2463,
+    "object_tag": "tv",
+    "bbox_extent": [
+      0.55,
+      0.39,
+      0.08
+    ],
+    "bbox_center": [
+      -20.69,
+      44.89,
+      1.16
+    ],
+    "bbox_volume": 0.02,
+    "n_points": 911
+  },
+  "object_105": {
+    "id": 2464,
+    "object_tag": "tv",
+    "bbox_extent": [
+      0.57,
+      0.45,
+      0.12
+    ],
+    "bbox_center": [
+      -20.1,
+      44.85,
+      1.16
+    ],
+    "bbox_volume": 0.03,
+    "n_points": 750
+  },
+  "object_106": {
+    "id": 2471,
+    "object_tag": "tv stand",
+    "bbox_extent": [
+      1.02,
+      0.8,
+      0.59
+    ],
+    "bbox_center": [
+      -16.35,
+      45.81,
+      0.4
+    ],
+    "bbox_volume": 0.48,
+    "n_points": 2041
+  },
+  "object_107": {
+    "id": 2473,
+    "object_tag": "desk",
+    "bbox_extent": [
+      3.74,
+      2.77,
+      0.93
+    ],
+    "bbox_center": [
+      -19.52,
+      44.24,
+      0.25
+    ],
+    "bbox_volume": 9.63,
+    "n_points": 7216
+  },
+  "object_108": {
+    "id": 2512,
+    "object_tag": "tv",
+    "bbox_extent": [
+      0.59,
+      0.39,
+      0.1
+    ],
+    "bbox_center": [
+      -20.6,
+      44.79,
+      1.15
+    ],
+    "bbox_volume": 0.02,
+    "n_points": 480
+  },
+  "object_109": {
+    "id": 2518,
+    "object_tag": "box",
+    "bbox_extent": [
+      0.99,
+      0.52,
+      0.45
+    ],
+    "bbox_center": [
+      -21.37,
+      45.45,
+      0.56
+    ],
+    "bbox_volume": 0.23,
+    "n_points": 1173
+  },
+  "object_110": {
+    "id": 2522,
+    "object_tag": "shelf",
+    "bbox_extent": [
+      0.69,
+      0.61,
+      0.41
+    ],
+    "bbox_center": [
+      -19.14,
+      45.21,
+      0.38
+    ],
+    "bbox_volume": 0.17,
+    "n_points": 1166
+  },
+  "object_111": {
+    "id": 2595,
+    "object_tag": "speaker",
+    "bbox_extent": [
+      0.44,
+      0.39,
+      0.17
+    ],
+    "bbox_center": [
+      -20.97,
+      45.07,
+      0.95
+    ],
+    "bbox_volume": 0.03,
+    "n_points": 323
+  },
+  "object_112": {
+    "id": 2719,
+    "object_tag": "desk",
+    "bbox_extent": [
+      1.75,
+      0.4,
+      0.21
+    ],
+    "bbox_center": [
+      -20.0,
+      24.36,
+      0.84
+    ],
+    "bbox_volume": 0.15,
+    "n_points": 1536
+  },
+  "object_113": {
+    "id": 2720,
+    "object_tag": "tv",
+    "bbox_extent": [
+      0.69,
+      0.47,
+      0.19
+    ],
+    "bbox_center": [
+      -17.79,
+      38.65,
+      1.1
+    ],
+    "bbox_volume": 0.06,
+    "n_points": 1504
+  },
+  "object_114": {
+    "id": 2723,
+    "object_tag": "storage bin",
+    "bbox_extent": [
+      0.49,
+      0.48,
+      0.27
+    ],
+    "bbox_center": [
+      -19.49,
+      35.8,
+      0.33
+    ],
+    "bbox_volume": 0.06,
+    "n_points": 616
+  },
+  "object_115": {
+    "id": 2724,
+    "object_tag": "tv",
+    "bbox_extent": [
+      0.63,
+      0.51,
+      0.17
+    ],
+    "bbox_center": [
+      -18.08,
+      36.01,
+      1.18
+    ],
+    "bbox_volume": 0.05,
+    "n_points": 606
+  },
+  "object_116": {
+    "id": 2749,
+    "object_tag": "desk",
+    "bbox_extent": [
+      4.79,
+      1.01,
+      1.12
+    ],
+    "bbox_center": [
+      -18.33,
+      40.93,
+      0.52
+    ],
+    "bbox_volume": 5.42,
+    "n_points": 3096
+  },
+  "object_117": {
+    "id": 2782,
+    "object_tag": "trash bin",
+    "bbox_extent": [
+      1.08,
+      0.43,
+      0.43
+    ],
+    "bbox_center": [
+      -19.44,
+      40.84,
+      0.12
+    ],
+    "bbox_volume": 0.2,
+    "n_points": 1087
+  },
+  "object_118": {
+    "id": 2798,
+    "object_tag": "storage bin",
+    "bbox_extent": [
+      0.78,
+      0.65,
+      0.44
+    ],
+    "bbox_center": [
+      -19.75,
+      35.7,
+      0.34
+    ],
+    "bbox_volume": 0.22,
+    "n_points": 1418
+  },
+  "object_119": {
+    "id": 2802,
+    "object_tag": "bench",
+    "bbox_extent": [
+      2.45,
+      1.35,
+      0.55
+    ],
+    "bbox_center": [
+      -20.48,
+      24.59,
+      0.59
+    ],
+    "bbox_volume": 1.82,
+    "n_points": 5360
+  },
+  "object_120": {
+    "id": 2829,
+    "object_tag": "potted plant",
+    "bbox_extent": [
+      1.69,
+      1.48,
+      0.21
+    ],
+    "bbox_center": [
+      -18.81,
+      24.11,
+      1.26
+    ],
+    "bbox_volume": 0.53,
+    "n_points": 3646
+  },
+  "object_121": {
+    "id": 2853,
+    "object_tag": "potted plant",
+    "bbox_extent": [
+      1.63,
+      1.58,
+      0.15
+    ],
+    "bbox_center": [
+      -18.62,
+      24.12,
+      1.27
+    ],
+    "bbox_volume": 0.39,
+    "n_points": 2535
+  },
+  "object_122": {
+    "id": 2854,
+    "object_tag": "potted plant",
+    "bbox_extent": [
+      1.66,
+      1.39,
+      1.38
+    ],
+    "bbox_center": [
+      -22.48,
+      24.47,
+      1.42
+    ],
+    "bbox_volume": 3.18,
+    "n_points": 4448
+  },
+  "object_123": {
+    "id": 2870,
+    "object_tag": "shelf",
+    "bbox_extent": [
+      0.73,
+      0.64,
+      0.4
+    ],
+    "bbox_center": [
+      -18.47,
+      38.15,
+      0.35
+    ],
+    "bbox_volume": 0.19,
+    "n_points": 1086
+  },
+  "object_124": {
+    "id": 2879,
+    "object_tag": "file cabinet",
+    "bbox_extent": [
+      0.71,
+      0.57,
+      0.54
+    ],
+    "bbox_center": [
+      -18.65,
+      37.47,
+      0.39
+    ],
+    "bbox_volume": 0.22,
+    "n_points": 1204
+  },
+  "object_125": {
+    "id": 2900,
+    "object_tag": "storage bin",
+    "bbox_extent": [
+      0.78,
+      0.52,
+      0.5
+    ],
+    "bbox_center": [
+      -19.74,
+      35.74,
+      0.39
+    ],
+    "bbox_volume": 0.2,
+    "n_points": 1755
+  },
+  "object_126": {
+    "id": 3050,
+    "object_tag": "lamp",
+    "bbox_extent": [
+      1.09,
+      0.97,
+      0.07
+    ],
+    "bbox_center": [
+      -19.83,
+      27.06,
+      3.1
+    ],
+    "bbox_volume": 0.07,
+    "n_points": 2613
+  },
+  "object_127": {
+    "id": 3132,
+    "object_tag": "trash bin",
+    "bbox_extent": [
+      0.86,
+      0.33,
+      0.32
+    ],
+    "bbox_center": [
+      -17.59,
+      15.17,
+      0.47
+    ],
+    "bbox_volume": 0.09,
+    "n_points": 1083
+  },
+  "object_128": {
+    "id": 3244,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      1.41,
+      1.43,
+      1.1
+    ],
+    "bbox_center": [
+      -0.11,
+      -6.27,
+      0.34
+    ],
+    "bbox_volume": 2.22,
+    "n_points": 2766
+  },
+  "object_129": {
+    "id": 3355,
+    "object_tag": "potted plant",
+    "bbox_extent": [
+      1.72,
+      1.38,
+      0.94
+    ],
+    "bbox_center": [
+      3.78,
+      5.43,
+      0.93
+    ],
+    "bbox_volume": 2.23,
+    "n_points": 3926
+  },
+  "object_130": {
+    "id": 3370,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      4.04,
+      1.13,
+      0.81
+    ],
+    "bbox_center": [
+      -9.75,
+      10.89,
+      0.59
+    ],
+    "bbox_volume": 3.7,
+    "n_points": 5435
+  },
+  "object_131": {
+    "id": 0,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      2.22,
+      1.14,
+      0.98
+    ],
+    "bbox_center": [
+      -4.97,
+      -9.6,
+      0.49
+    ],
+    "bbox_volume": 2.48,
+    "n_points": 32781
+  },
+  "object_132": {
+    "id": 3,
+    "object_tag": "tv",
+    "bbox_extent": [
+      0.64,
+      0.52,
+      0.22
+    ],
+    "bbox_center": [
+      -2.18,
+      -1.54,
+      1.14
+    ],
+    "bbox_volume": 0.07,
+    "n_points": 681
+  },
+  "object_133": {
+    "id": 39,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      2.29,
+      1.02,
+      1.11
+    ],
+    "bbox_center": [
+      0.42,
+      -6.26,
+      0.56
+    ],
+    "bbox_volume": 2.59,
+    "n_points": 9833
+  },
+  "object_134": {
+    "id": 47,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      1.01,
+      0.73,
+      0.72
+    ],
+    "bbox_center": [
+      1.73,
+      -6.18,
+      0.53
+    ],
+    "bbox_volume": 0.53,
+    "n_points": 1279
+  },
+  "object_135": {
+    "id": 54,
+    "object_tag": "tv",
+    "bbox_extent": [
+      1.9,
+      1.1,
+      0.17
+    ],
+    "bbox_center": [
+      1.51,
+      -11.69,
+      2.11
+    ],
+    "bbox_volume": 0.36,
+    "n_points": 7170
+  },
+  "object_136": {
+    "id": 65,
+    "object_tag": "coffee table",
+    "bbox_extent": [
+      1.74,
+      1.52,
+      0.73
+    ],
+    "bbox_center": [
+      -3.52,
+      -9.74,
+      0.25
+    ],
+    "bbox_volume": 1.93,
+    "n_points": 6113
+  },
+  "object_137": {
+    "id": 78,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      2.15,
+      1.34,
+      1.19
+    ],
+    "bbox_center": [
+      -1.49,
+      -9.61,
+      0.51
+    ],
+    "bbox_volume": 3.43,
+    "n_points": 13752
+  },
+  "object_138": {
+    "id": 135,
+    "object_tag": "trash bin",
+    "bbox_extent": [
+      0.91,
+      0.4,
+      0.32
+    ],
+    "bbox_center": [
+      -14.59,
+      -5.77,
+      0.5
+    ],
+    "bbox_volume": 0.12,
+    "n_points": 2296
+  },
+  "object_139": {
+    "id": 180,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      2.67,
+      1.49,
+      1.12
+    ],
+    "bbox_center": [
+      -10.41,
+      11.25,
+      0.48
+    ],
+    "bbox_volume": 4.46,
+    "n_points": 14439
+  },
+  "object_140": {
+    "id": 185,
+    "object_tag": "trash bin",
+    "bbox_extent": [
+      0.86,
+      0.63,
+      0.51
+    ],
+    "bbox_center": [
+      -13.6,
+      11.61,
+      0.47
+    ],
+    "bbox_volume": 0.28,
+    "n_points": 3842
+  },
+  "object_141": {
+    "id": 188,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      4.26,
+      1.3,
+      0.99
+    ],
+    "bbox_center": [
+      -9.49,
+      11.18,
+      0.54
+    ],
+    "bbox_volume": 5.48,
+    "n_points": 29445
+  },
+  "object_142": {
+    "id": 205,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      4.31,
+      1.33,
+      1.14
+    ],
+    "bbox_center": [
+      -9.46,
+      11.2,
+      0.48
+    ],
+    "bbox_volume": 6.53,
+    "n_points": 34187
+  },
+  "object_143": {
+    "id": 215,
+    "object_tag": "bench",
+    "bbox_extent": [
+      2.66,
+      1.51,
+      1.11
+    ],
+    "bbox_center": [
+      -10.4,
+      11.25,
+      0.48
+    ],
+    "bbox_volume": 4.46,
+    "n_points": 15323
+  },
+  "object_144": {
+    "id": 323,
+    "object_tag": "potted plant",
+    "bbox_extent": [
+      1.63,
+      0.97,
+      0.94
+    ],
+    "bbox_center": [
+      -0.59,
+      11.09,
+      0.85
+    ],
+    "bbox_volume": 1.49,
+    "n_points": 7154
+  },
+  "object_145": {
+    "id": 404,
+    "object_tag": "tv",
+    "bbox_extent": [
+      1.6,
+      1.06,
+      0.11
+    ],
+    "bbox_center": [
+      0.58,
+      35.39,
+      2.03
+    ],
+    "bbox_volume": 0.19,
+    "n_points": 2400
+  },
+  "object_146": {
+    "id": 405,
+    "object_tag": "shelf",
+    "bbox_extent": [
+      2.65,
+      2.39,
+      0.58
+    ],
+    "bbox_center": [
+      -4.69,
+      30.73,
+      1.17
+    ],
+    "bbox_volume": 3.67,
+    "n_points": 18704
+  },
+  "object_147": {
+    "id": 410,
+    "object_tag": "clock",
+    "bbox_extent": [
+      0.4,
+      0.4,
+      0.09
+    ],
+    "bbox_center": [
+      1.64,
+      35.42,
+      2.12
+    ],
+    "bbox_volume": 0.01,
+    "n_points": 447
+  },
+  "object_148": {
+    "id": 411,
+    "object_tag": "chair",
+    "bbox_extent": [
+      1.15,
+      0.68,
+      0.51
+    ],
+    "bbox_center": [
+      0.93,
+      31.68,
+      0.53
+    ],
+    "bbox_volume": 0.4,
+    "n_points": 1927
+  },
+  "object_149": {
+    "id": 415,
+    "object_tag": "chair",
+    "bbox_extent": [
+      1.15,
+      0.77,
+      0.64
+    ],
+    "bbox_center": [
+      2.68,
+      31.45,
+      0.53
+    ],
+    "bbox_volume": 0.57,
+    "n_points": 1518
+  },
+  "object_150": {
+    "id": 417,
+    "object_tag": "chair",
+    "bbox_extent": [
+      1.12,
+      0.69,
+      0.45
+    ],
+    "bbox_center": [
+      1.76,
+      31.61,
+      0.51
+    ],
+    "bbox_volume": 0.35,
+    "n_points": 1122
+  },
+  "object_151": {
+    "id": 431,
+    "object_tag": "cabinet",
+    "bbox_extent": [
+      2.87,
+      2.47,
+      0.46
+    ],
+    "bbox_center": [
+      3.58,
+      35.14,
+      1.28
+    ],
+    "bbox_volume": 3.26,
+    "n_points": 9133
+  },
+  "object_152": {
+    "id": 448,
+    "object_tag": "clock",
+    "bbox_extent": [
+      0.41,
+      0.4,
+      0.09
+    ],
+    "bbox_center": [
+      1.73,
+      35.37,
+      2.08
+    ],
+    "bbox_volume": 0.01,
+    "n_points": 379
+  },
+  "object_153": {
+    "id": 449,
+    "object_tag": "tv",
+    "bbox_extent": [
+      1.48,
+      0.93,
+      0.13
+    ],
+    "bbox_center": [
+      0.65,
+      35.36,
+      1.99
+    ],
+    "bbox_volume": 0.18,
+    "n_points": 3704
+  },
+  "object_154": {
+    "id": 459,
+    "object_tag": "shelf",
+    "bbox_extent": [
+      2.3,
+      1.94,
+      0.47
+    ],
+    "bbox_center": [
+      3.78,
+      35.05,
+      1.2
+    ],
+    "bbox_volume": 2.1,
+    "n_points": 10247
+  },
+  "object_155": {
+    "id": 535,
+    "object_tag": "bench",
+    "bbox_extent": [
+      2.47,
+      0.59,
+      0.51
+    ],
+    "bbox_center": [
+      5.16,
+      29.52,
+      0.28
+    ],
+    "bbox_volume": 0.74,
+    "n_points": 4022
+  },
+  "object_156": {
+    "id": 544,
+    "object_tag": "shelf",
+    "bbox_extent": [
+      2.44,
+      2.1,
+      0.49
+    ],
+    "bbox_center": [
+      3.87,
+      24.39,
+      1.18
+    ],
+    "bbox_volume": 2.51,
+    "n_points": 12252
+  },
+  "object_157": {
+    "id": 547,
+    "object_tag": "desk",
+    "bbox_extent": [
+      1.37,
+      1.12,
+      0.97
+    ],
+    "bbox_center": [
+      2.99,
+      27.69,
+      0.48
+    ],
+    "bbox_volume": 1.49,
+    "n_points": 3822
+  },
+  "object_158": {
+    "id": 549,
+    "object_tag": "chair",
+    "bbox_extent": [
+      0.83,
+      0.71,
+      0.52
+    ],
+    "bbox_center": [
+      2.68,
+      28.62,
+      0.61
+    ],
+    "bbox_volume": 0.31,
+    "n_points": 1114
+  },
+  "object_159": {
+    "id": 554,
+    "object_tag": "mirror",
+    "bbox_extent": [
+      4.73,
+      3.35,
+      0.24
+    ],
+    "bbox_center": [
+      -0.95,
+      19.57,
+      2.15
+    ],
+    "bbox_volume": 3.8,
+    "n_points": 5005
+  },
+  "object_160": {
+    "id": 614,
+    "object_tag": "closet wall",
+    "bbox_extent": [
+      2.48,
+      2.2,
+      0.44
+    ],
+    "bbox_center": [
+      -4.56,
+      26.02,
+      1.17
+    ],
+    "bbox_volume": 2.4,
+    "n_points": 10355
+  },
+  "object_161": {
+    "id": 642,
+    "object_tag": "desk",
+    "bbox_extent": [
+      4.29,
+      0.83,
+      0.77
+    ],
+    "bbox_center": [
+      1.42,
+      16.83,
+      0.46
+    ],
+    "bbox_volume": 2.74,
+    "n_points": 2331
+  },
+  "object_162": {
+    "id": 662,
+    "object_tag": "closet wall",
+    "bbox_extent": [
+      2.63,
+      1.58,
+      0.06
+    ],
+    "bbox_center": [
+      -4.83,
+      10.32,
+      3.09
+    ],
+    "bbox_volume": 0.25,
+    "n_points": 3276
+  },
+  "object_163": {
+    "id": 674,
+    "object_tag": "potted plant",
+    "bbox_extent": [
+      1.72,
+      1.47,
+      1.38
+    ],
+    "bbox_center": [
+      3.9,
+      -5.31,
+      0.92
+    ],
+    "bbox_volume": 3.49,
+    "n_points": 12167
+  },
+  "object_164": {
+    "id": 739,
+    "object_tag": "tv",
+    "bbox_extent": [
+      1.92,
+      1.14,
+      0.26
+    ],
+    "bbox_center": [
+      1.5,
+      -11.65,
+      2.06
+    ],
+    "bbox_volume": 0.57,
+    "n_points": 13378
+  },
+  "object_165": {
+    "id": 764,
+    "object_tag": "end table",
+    "bbox_extent": [
+      2.3,
+      0.97,
+      1.03
+    ],
+    "bbox_center": [
+      0.43,
+      -6.26,
+      0.55
+    ],
+    "bbox_volume": 2.3,
+    "n_points": 9937
+  },
+  "object_166": {
+    "id": 767,
+    "object_tag": "potted plant",
+    "bbox_extent": [
+      2.4,
+      2.02,
+      0.06
+    ],
+    "bbox_center": [
+      4.88,
+      -11.92,
+      1.33
+    ],
+    "bbox_volume": 0.29,
+    "n_points": 3912
+  },
+  "object_167": {
+    "id": 769,
+    "object_tag": "potted plant",
+    "bbox_extent": [
+      0.94,
+      0.95,
+      0.13
+    ],
+    "bbox_center": [
+      -2.35,
+      -11.88,
+      1.3
+    ],
+    "bbox_volume": 0.12,
+    "n_points": 1587
+  },
+  "object_168": {
+    "id": 772,
+    "object_tag": "sofa chair",
+    "bbox_extent": [
+      2.13,
+      1.24,
+      0.98
+    ],
+    "bbox_center": [
+      -2.5,
+      -9.59,
+      0.48
+    ],
+    "bbox_volume": 2.59,
+    "n_points": 10295
+  },
+  "object_169": {
+    "id": 778,
+    "object_tag": "coffee table",
+    "bbox_extent": [
+      1.74,
+      1.52,
+      0.67
+    ],
+    "bbox_center": [
+      -3.5,
+      -9.73,
+      0.34
+    ],
+    "bbox_volume": 1.77,
+    "n_points": 5491
+  }
+}
