@@ -87,7 +87,7 @@ export class PointCloud {
 		this.potree = new Potree('v2');
 		this.potree.pointBudget = 3_000_000;
 		this.pointClouds = [];
-		this.baseUrl = "assets/potree/";
+		this.baseUrl = "data18/potree/";
 
 		this.container = new Group();
 		this.mapVisible = true;
@@ -126,9 +126,9 @@ export class PointCloud {
 				//	.addComponent(GrabComponent, { object3D: global.pointcloud.container });
 		});
 
-		this.loadConnections('assets/connections_demo.txt');
-		this.loadPCD('assets/nodes_demo.pcd');
-		this.loadObj('assets/obj_merged.pcd');
+		this.loadConnections('data18/connections_demo.txt');
+		this.loadPCD('data18/nodes_demo.pcd');
+		this.loadObj('data18/obj_merged.pcd');
 	}
 
 	update(camera, renderer) {

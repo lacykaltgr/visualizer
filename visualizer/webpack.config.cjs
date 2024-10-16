@@ -37,7 +37,7 @@ module.exports = {
     host: '0.0.0.0',
     server: 'https',
     compress: true,
-    port: 8080,
+    port: 8036,
     allowedHosts: ['all'],
   },
   output: {
@@ -56,7 +56,7 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: 'src/assets', to: 'assets' },
+        { from: '/mnt/gpu02_data0/ros/documents/data_proc/data18/web', to: 'data18' },
         {
           from: 'node_modules/three/examples/jsm/libs/basis',
           to: 'vendor/basis',
