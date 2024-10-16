@@ -34,7 +34,7 @@ module.exports = {
     static: {
       directory: path.join(__dirname, ''),
     },
-    host: '0.0.0.0',
+    host: '10.88.164.22',
     server: 'https',
     compress: true,
     port: 8036,
@@ -56,7 +56,9 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
+        { from: 'src/assets', to: 'assets' },
         { from: '/mnt/gpu02_data0/ros/documents/data_proc/data18/web', to: 'data18' },
+        //{ from : '/workspace/data_proc/data18/web', to: 'data18' },
         {
           from: 'node_modules/three/examples/jsm/libs/basis',
           to: 'vendor/basis',
