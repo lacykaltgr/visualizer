@@ -24,55 +24,11 @@ import { PCDLoader } from 'three/addons/loaders/PCDLoader.js';
 import { GrabComponent } from './grab';
 import { Text } from 'troika-three-text';
 import { Potree } from '@pnext/three-loader';
-import { Color, BufferGeometry, LineSegments, LineBasicMaterial, Float32BufferAttribute, TextureLoader, PointsMaterial, Points } from 'three';
-
+import { Vector3, Box3, Color, BufferGeometry, LineSegments, LineBasicMaterial, Float32BufferAttribute, TextureLoader, PointsMaterial, Points } from 'three';
+import ROSLIB from 'roslib';
 
 const CONFIG_PANEL_TEXTURE = textureLoader.load('assets/color_picker_ui.png');
 CONFIG_PANEL_TEXTURE.colorSpace = SRGBColorSpace;
-
-const VAMP_HOLE_MATERIAL = new MeshBasicMaterial({
-	color: 0x000000,
-});
-
-export const loadSneakers = (world, global) => {
-	gltfLoader.load('assets/gltf/sneaker.gltf', (gltf) => {
-		const model = gltf.scene;
-		model.traverse((node) => {
-			if (node.material) {
-				const reconstructedMaterial = new MeshStandardMaterial({
-					color: 0x000000,
-					map: node.material.map,
-					normalMap: node.material.normalMap,
-					roughness: 0.7,
-				});
-
-				node.material = reconstructedMaterial;
-
-				if (node.name == 'vholes') {
-					node.material = VAMP_HOLE_MATERIAL;
-					node.visible = true;
-				}
-			}
-			if (node.geometry) {
-				node.geometry.computeBoundsTree();
-			}
-		});
-		const sneakerMeshRight = new Group().add(model.clone());
-		sneakerMeshRight.scale.set(1, 1, -1);
-		sneakerMeshRight.userData.shoeId = 'right';
-		global.sneakerRight = new Sneaker(sneakerMeshRight);
-		global.sneakerRight.grabComponent = world
-			.createEntity()
-			.addComponent(GrabComponent, { object3D: sneakerMeshRight });
-
-		const sneakerMeshLeft = new Group().add(model);
-		sneakerMeshLeft.userData.shoeId = 'left';
-		global.sneakerLeft = new Sneaker(sneakerMeshLeft);
-		global.sneakerLeft.grabComponent = world
-			.createEntity()
-			.addComponent(GrabComponent, { object3D: sneakerMeshLeft });
-	});
-};
 
 
 
@@ -87,7 +43,7 @@ export class PointCloud {
 		this.potree = new Potree('v2');
 		this.potree.pointBudget = 3_000_000;
 		this.pointClouds = [];
-		this.baseUrl = "data18/potree/";
+		this.baseUrl = "data19/potree/";
 
 		this.container = new Group();
 		this.mapVisible = true;
@@ -100,6 +56,45 @@ export class PointCloud {
 		this.graphContainer = new Group();
 		this.graphVisible = true;
 		this.toggleGraph = this.toggleGraph.bind(this);
+
+		this.ros = new ROSLIB.Ros();
+		this.setupROS();
+		this.listener = new ROSLIB.Topic({
+			ros : this.ros,
+			name : '/listener',
+			messageType : 'std_msgs/String'
+		});
+		this.listener.subscribe(function(message) {
+			console.log('Received message on ' + this.listener.name + ': ' + message.data);
+		});
+	}
+
+	setupROS() {
+		this.ros.on('error', function(error) {
+			document.getElementById('connecting').style.display = 'none';
+			document.getElementById('connected').style.display = 'none';
+			document.getElementById('closed').style.display = 'none';
+			document.getElementById('error').style.display = 'inline';
+			console.log(error);
+		});
+
+		// Find out exactly when we made a connection.
+		this.ros.on('connection', function() {
+			console.log('Connection made!');
+			document.getElementById('connecting').style.display = 'none';
+			document.getElementById('error').style.display = 'none';
+			document.getElementById('closed').style.display = 'none';
+			document.getElementById('connected').style.display = 'inline';
+		});
+
+		this.ros.on('close', function() {
+			console.log('Connection closed.');
+			document.getElementById('connecting').style.display = 'none';
+			document.getElementById('connected').style.display = 'none';
+			document.getElementById('closed').style.display = 'inline';
+		});
+
+		this.ros.connect('wss://10.88.164.22:9090');
 	}
 
 
@@ -126,9 +121,9 @@ export class PointCloud {
 				//	.addComponent(GrabComponent, { object3D: global.pointcloud.container });
 		});
 
-		this.loadConnections('data18/connections_demo.txt');
-		this.loadPCD('data18/nodes_demo.pcd');
-		this.loadObj('data18/obj_merged.pcd');
+		this.loadConnections('data19/adjacency_matrix.txt');
+		this.loadPCD('data19/nodes_demo.pcd');
+		this.loadObj('data19/obj_merged.pcd');
 	}
 
 	update(camera, renderer) {
@@ -143,22 +138,39 @@ export class PointCloud {
 	loadPCD(filePath) {
 		const loader = new PCDLoader();
 		loader.load(filePath, (pcd) => {
+			// Get the position attribute from geometry
+			const positions = pcd.geometry.getAttribute('position');
+			
+			// Extract coordinates and add to this.coordinates
+			this.coordinates = [];
+			for (let i = 0; i < positions.count; i++) {
+				this.coordinates.push({
+					x: positions.getX(i),
+					y: positions.getY(i),
+					z: positions.getZ(i)
+				});
+			}
+	
+			// Apply transforms
 			pcd.geometry.center();
-			//pcd.material.size = 0.5;
 			pcd.rotateX(-Math.PI / 2);
-			pcd.rotateZ(-Math.PI/ 2);
-			//pco.scale.set(.0, 10.0, 10.0);
-			pcd.position.set(44.85, 2.0, 15.8);
-			// set color to red
-
-			const sprite = new TextureLoader().load( 'assets/disc.png' );
+			pcd.rotateZ(-Math.PI / 2);
+			// Set position to container's center instead of hardcoded values
+			pcd.position.set(43.8, 2, 15.8);
+	
+			const sprite = new TextureLoader().load('assets/disc.png');
 			sprite.colorSpace = SRGBColorSpace;
-			// use sphere as point shape
-			const material = new PointsMaterial({ size: 0.5, sizeAttenuation: true, map: sprite, alphaTest: 0.8, transparent: true } );
-			material.color.setHSL( 1.0, 0.3, 1.0, SRGBColorSpace );
-
+			const material = new PointsMaterial({ 
+				size: 0.5, 
+				sizeAttenuation: true, 
+				map: sprite, 
+				alphaTest: 0.8, 
+				transparent: true 
+			});
+			material.color.setHSL(1.0, 0.3, 1.0, SRGBColorSpace);
+	
 			pcd.material = material;
-
+	
 			console.log('pcd loaded');
 			this.graphContainer.add(pcd);
 			this.nodesReady = true;
@@ -172,34 +184,58 @@ export class PointCloud {
 				const lines = data.trim().split('\n');
 				const points = [];
 				const lineIndices = [];
-
-				for (let i = 0; i < lines.length; i += 3) {
-					const point1 = lines[i].split(' ').map(parseFloat);
-					const point2 = lines[i + 1].split(' ').map(parseFloat);
-
-					points.push(...point1, ...point2);
-					lineIndices.push(i / 3 * 2, i / 3 * 2 + 1);
+				
+				// Parse adjacency matrix
+				const adjacencyMatrix = lines.map(line => 
+					line.trim().split(/\s+/).map(Number)
+				);
+				
+				let connectionCount = 0;
+				// Create connections based on adjacency matrix
+				for (let i = 0; i < adjacencyMatrix.length; i++) {
+					for (let j = i + 1; j < adjacencyMatrix[i].length; j++) {
+						// If there's a connection (value is 1)
+						if (adjacencyMatrix[i][j] === 1) {
+							connectionCount++;
+							// Get positions from this.coordinates
+							const point1 = this.coordinates[i];
+							const point2 = this.coordinates[j];
+							
+							// Add positions to points array
+							points.push(
+								point1.x, point1.y, point1.z,
+								point2.x, point2.y, point2.z
+							);
+							
+							// Add indices for the line
+							const index = lineIndices.length / 2;
+							lineIndices.push(index * 2, index * 2 + 1);
+						}
+					}
 				}
-
+	
+				console.log(`Total number of connections: ${connectionCount}`);
+				console.log(`Number of points in coordinates: ${this.coordinates.length}`);
+				console.log(`Adjacency matrix size: ${adjacencyMatrix.length}x${adjacencyMatrix[0].length}`);
+	
 				const geometry = new BufferGeometry();
 				geometry.setAttribute('position', new Float32BufferAttribute(points, 3));
 				geometry.setIndex(lineIndices);
-
+	
 				const material = new LineBasicMaterial({ color: 0xff0000, linewidth: 300 });
 				const lineSegments = new LineSegments(geometry, material);
-
+	
 				console.log('connections loaded');
-
-				lineSegments.position.set(45.0, 2.0, 15.8);
+	
+				lineSegments.position.set(44.0, 2.0, 15.8);
 				lineSegments.rotateX(-Math.PI / 2);
-				lineSegments.rotateZ(-Math.PI/ 2);
+				lineSegments.rotateZ(-Math.PI / 2);
 				lineSegments.geometry.center();
 				this.graphContainer.add(lineSegments);
 				this.connectionsReady = true;
 			})
 			.catch(error => console.error('Error loading connections:', error));
 	}
-
 
 	loadObj(filePath) {
 		const loader = new PCDLoader();
@@ -210,7 +246,7 @@ export class PointCloud {
 			pcd.rotateZ(-Math.PI/ 2);
 			pcd.material.size = 0.25;
 			//pco.scale.set(.0, 10.0, 10.0);
-			pcd.position.set(51.45, 2.9, 16.1);
+			pcd.position.set(42.85, 2.5, 15.8);
 			// set color to red
 
 			console.log('obj pcd loaded');

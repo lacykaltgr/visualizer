@@ -25,7 +25,7 @@ import { PointerSystem } from './pointer';
 import { SizingSystem } from './size';
 import { WelcomeSystem } from './welcome';
 import { World } from 'elics';
-import { loadSneakers, loadPointCloud } from './sneaker';
+import { loadPointCloud } from './pointcloud';
 import { setupScene } from './scene';
 
 BufferGeometry.prototype.computeBoundsTree = computeBoundsTree;
@@ -61,7 +61,6 @@ const global = world.createEntity().addComponent(GlobalComponent, {
 	scene,
 });
 
-loadSneakers(world, global);
 const pointCloud = loadPointCloud(world, global);
 
 renderer.setAnimationLoop(function () {

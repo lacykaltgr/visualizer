@@ -15,7 +15,7 @@ import { FirstPersonControls } from 'three/addons/controls/FirstPersonControls.j
 import { System } from 'elics';
 import { prefabs } from './constants';
 import { Potree } from '@pnext/three-loader';
-import { loadPointCloud } from './sneaker';
+import { loadPointCloud } from './pointcloud';
 import { MapControls } from 'three/examples/jsm/controls/MapControls.js';
 import { Color } from 'three';
 
