@@ -63,7 +63,6 @@ export class InlineSystem extends System {
 	update() {
 		const { scene, camera, renderer} =
 			this.getEntities(this.queries.global)[0].getComponent(GlobalComponent);
-
 		if (this.needsSetup) {
 			this._setupButtons(renderer);
 			this.needsSetup = false;
@@ -87,7 +86,7 @@ export class InlineSystem extends System {
 			this.container.add(this.pointCloud.graphContainer);
 			this.container.add(this.pointCloud.objectContainer);
 
-			this.container.position.set(-30, -5, -30);
+			//this.container.position.set(-30, -5, -30);
 
 
 			//const pointsClone = meshMap.clone();
@@ -119,7 +118,8 @@ export class InlineSystem extends System {
 			this.orbitControls.minPolarAngle = ORBIT_CONTROL_POLAR_ANGLE;
 			this.orbitControls.maxPolarAngle = ORBIT_CONTROL_POLAR_ANGLE;
 			*/
-			camera.position.set(0, 0.2, 0.3);
+			camera.position.set(-10, 8, 15);
+			camera.up.set(0,0,1);
 
 			this.controls = new MapControls( camera, renderer.domElement );
 			//this.controls.enableDamping = true;

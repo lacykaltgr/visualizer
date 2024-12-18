@@ -50,6 +50,7 @@ export class PlayerSystem extends System {
 		const playerSpace = new Group();
 		playerSpace.add(camera);
 
+		/*
 		for (let i = 0; i < 2; i++) {
 			const controllerModelFactory = new XRControllerModelFactory();
 			const controllerGrip = renderer.xr.getControllerGrip(i);
@@ -94,6 +95,7 @@ export class PlayerSystem extends System {
 			// addTargetRay(targetRaySpace);
 			scene.add(targetRaySpace);
 		}
+		*/
 
 		const playerHead = new Group();
 		playerSpace.add(playerHead);
@@ -118,6 +120,7 @@ export class PlayerSystem extends System {
 		if (!player) {
 			this._setup(global);
 		} else {
+			/*
 			Object.values(player.controllers).forEach((controllerObject) => {
 				if (controllerObject) {
 					controllerObject.gamepadWrapper.update();
@@ -161,6 +164,7 @@ export class PlayerSystem extends System {
 					this._vec3,
 				);
 			}
+				*/
 		}
 	}
 }

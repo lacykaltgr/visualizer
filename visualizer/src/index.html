@@ -48,7 +48,7 @@
 					Customize in MR
 				</button>
 				<button id="web-launch-button" class="btn customize-button">
-					Customize on Meta Quest
+					Open on Meta Quest
 				</button>
 				<button id="toggle-graph-button" class="btn">
 					Toggle Navigation Graph
@@ -59,6 +59,18 @@
 				<button id="toggle-objects-button" class="btn">
 					Toggle Objects
 				</button> 
+				<button id="reset-button" class="btn">
+					Reset Environment
+				</button> 
+				<div class="input-group">
+					<label for="query-input">Enter Query:</label>
+					<input type="text" id="query-input" placeholder="go to the meeting room" />
+					<button id="query-button-robot" class="btn">Send Robot Query</button>
+					<button id="query-button-human" class="btn">Send Human Query</button>
+				</div>
+				<div id="result-display" class="result-display">
+					<!-- Messages will be displayed here -->
+				</div>
 			</div>
 		</div>
 	</body>

@@ -17,9 +17,9 @@ import { POINTER_MODE, PlayerComponent } from './player';
 import { System } from 'elics';
 import { gltfLoader } from './global';
 
-const POINTER_MATERIAL = new MeshMatcapMaterial({
-	matcap: new TextureLoader().load('assets/matcap.png'),
-});
+//const POINTER_MATERIAL = new MeshMatcapMaterial({
+//	matcap: new TextureLoader().load('assets/matcap.png'),
+//});
 
 export class PointerSystem extends System {
 	update(delta) {
@@ -48,9 +48,9 @@ export class PointerSystem extends System {
 					pointerObject.position.z = -0.01;
 					targetRaySpace.userData.pointer.object = pointerObject;
 					pointerObject.traverse((child) => {
-						if (child.isMesh) {
-							child.material = POINTER_MATERIAL;
-						}
+						//if (child.isMesh) {
+						//	child.material = POINTER_MATERIAL;
+						//}
 					});
 					const ptr1 = pointerObject.getObjectByName('ptr1');
 					const ptr2 = pointerObject.getObjectByName('ptr2');

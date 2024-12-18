@@ -12,6 +12,7 @@ import {
 	MeshStandardMaterial,
 	PlaneGeometry,
 	SRGBColorSpace,
+	SphereGeometry,
 } from 'three';
 import {
 	LeatherMaterials,
@@ -27,10 +28,6 @@ import { Potree } from '@pnext/three-loader';
 import { Vector3, Box3, Color, BufferGeometry, LineSegments, LineBasicMaterial, Float32BufferAttribute, TextureLoader, PointsMaterial, Points } from 'three';
 import ROSLIB from 'roslib';
 
-const CONFIG_PANEL_TEXTURE = textureLoader.load('assets/color_picker_ui.png');
-CONFIG_PANEL_TEXTURE.colorSpace = SRGBColorSpace;
-
-
 
 export const loadPointCloud = (world, global) => {
 	const pointCloud = new PointCloud();
@@ -43,7 +40,7 @@ export class PointCloud {
 		this.potree = new Potree('v2');
 		this.potree.pointBudget = 3_000_000;
 		this.pointClouds = [];
-		this.baseUrl = "data19/potree/";
+		this.baseUrl = "scene_data/potree/";
 
 		this.container = new Group();
 		this.mapVisible = true;
@@ -59,42 +56,116 @@ export class PointCloud {
 
 		this.ros = new ROSLIB.Ros();
 		this.setupROS();
-		this.listener = new ROSLIB.Topic({
+
+		this.tfListener = new ROSLIB.Topic({
+			ros: this.ros,
+			name: '/tf',
+			messageType: 'tf2_msgs/msg/TFMessage',
+		});
+		this.tfListener.subscribe(this.updateSpherePosition.bind(this));
+
+		this.reset = new ROSLIB.Topic({
 			ros : this.ros,
-			name : '/listener',
+			name : '/env/reset',
 			messageType : 'std_msgs/String'
 		});
-		this.listener.subscribe(function(message) {
-			console.log('Received message on ' + this.listener.name + ': ' + message.data);
+		document.getElementById('reset-button').addEventListener('click', this.resetEnvironment.bind(this));
+
+		this.query_pub = new ROSLIB.Topic({
+			ros : this.ros,
+			name : '/query',
+			messageType : 'std_msgs/String'
 		});
+		document.getElementById('query-button-robot').addEventListener('click', this.query_robot.bind(this));
+		this.query_pub_human = new ROSLIB.Topic({
+			ros : this.ros,
+			name : '/satinav_bridge_query',
+			messageType : 'std_msgs/String'
+		});
+		document.getElementById('query-button-human').addEventListener('click', this.query_human.bind(this));
+
+
+		this.result_sub = new ROSLIB.Topic({
+			ros : this.ros,
+			name : '/query_result',
+			messageType : 'std_msgs/String'
+		});
+		this.result_sub.subscribe((message) => {
+			console.log('Received result: ' + message.data);
+			// convert data to json
+			var json = JSON.parse(message.data);
+			var results = {
+				'node_id': json.node_id,
+				'node_desciption': json.node_desciption,
+				'target': json.target,
+			}
+			document.getElementById('result-display').innerText = JSON.stringify(results, null, 2);
+			document.getElementById('result-display').style.display = 'block';
+			document.getElementById('result-display').style.color = 'red';
+
+			var path = json.path;
+			this.updatePath(path);
+		});
+
+		this.spherePosition = new Vector3(0, 0, 0); // Initial sphere position
+		this.greenSphere = this.createGreenSphere(); // Create the sphere
+		this.container.add(this.greenSphere); // Add sphere to the container
+		this.pathSegments = null;
+	}
+
+	resetEnvironment() {
+		var message = new ROSLIB.Message({
+			data: 'reset'
+		});
+		this.reset.publish(message);
+		console.log('Resetting environment');
+	}
+
+	query_robot() {
+		var message = document.getElementById('query-input').value;
+		var query = new ROSLIB.Message({
+			data: message
+		});
+		this.query_pub.publish(query);
+		console.log('Querying environment');
+	}
+
+	query_human() {
+		var query_string = document.getElementById('query-input').value;
+		var message = JSON.stringify({
+			agent_id: "satinav",
+			query: query_string,
+			geopose: {
+				position: {
+					lat: 47.48623767928393846,
+					lon: 19.07939640241426105,
+					h: 0.85
+				},
+				quaternion: {
+					"x":0, "y":0, "z":0, "w":1
+				}
+			}
+		});
+		var query = new ROSLIB.Message({data: message});
+		this.query_pub_human.publish(query);
+		console.log('Querying environment');
 	}
 
 	setupROS() {
 		this.ros.on('error', function(error) {
-			document.getElementById('connecting').style.display = 'none';
-			document.getElementById('connected').style.display = 'none';
-			document.getElementById('closed').style.display = 'none';
-			document.getElementById('error').style.display = 'inline';
 			console.log(error);
 		});
 
 		// Find out exactly when we made a connection.
 		this.ros.on('connection', function() {
 			console.log('Connection made!');
-			document.getElementById('connecting').style.display = 'none';
-			document.getElementById('error').style.display = 'none';
-			document.getElementById('closed').style.display = 'none';
-			document.getElementById('connected').style.display = 'inline';
 		});
 
 		this.ros.on('close', function() {
 			console.log('Connection closed.');
-			document.getElementById('connecting').style.display = 'none';
-			document.getElementById('connected').style.display = 'none';
-			document.getElementById('closed').style.display = 'inline';
 		});
 
-		this.ros.connect('wss://10.88.164.22:9090');
+		this.ros.connect('ws://10.88.164.22:9090');
 	}
 
 
@@ -108,10 +179,6 @@ export class PointCloud {
 		)
 		.then(pco => {
 			pco.material.size = 2.0;
-			pco.rotateX(-Math.PI / 2);
-			pco.rotateZ(-Math.PI/ 2);
-			//pco.scale.set(.0, 10.0, 10.0);
-			pco.position.set(0.0, 0.0, 0.0);
 			this.pointClouds.push(pco);
 			this.container.add(pco);
 			if (global != null)
@@ -121,9 +188,9 @@ export class PointCloud {
 				//	.addComponent(GrabComponent, { object3D: global.pointcloud.container });
 		});
 
-		this.loadConnections('data19/adjacency_matrix.txt');
-		this.loadPCD('data19/nodes_demo.pcd');
-		this.loadObj('data19/obj_merged.pcd');
+		this.loadConnections('scene_data/adjacency_matrix.txt');
+		this.loadPCD('scene_data/nodes.pcd');
+		this.loadObj('scene_data/obj_merged.pcd');
 	}
 
 	update(camera, renderer) {
@@ -132,6 +199,49 @@ export class PointCloud {
 
 	createCopy() {
 		return this.container.clone();
+	}
+
+	createGreenSphere() {
+		const geometry = new SphereGeometry(0.5, 32, 32);
+		const material = new MeshBasicMaterial({ color: new Color(0x00ff00) });
+		const sphere = new Mesh(geometry, material);
+		sphere.geometry.center();
+		sphere.position.copy(this.spherePosition); // Initialize position
+		return sphere;
+	}
+
+	updateSpherePosition(message) {
+		const translation = message.transforms[0].transform.translation;
+		this.spherePosition.set(translation.y, translation.z, translation.x);
+		this.greenSphere.geometry.center(); // Center the sphere
+		this.greenSphere.position.copy(this.spherePosition); // Update sphere's position
+		this.greenSphere.visible = true; // Ensure it's visible on update
+	}
+
+	updatePath(path) {
+		if (this.pathSegments) {
+			this.graphContainer.remove(this.pathSegments);
+		}
+
+		// Extract points
+		const points = [];
+		path.forEach((point) => {
+			points.push(point.x, point.y, point.z);
+		});
+	
+		// Generate line indices
+		const lineIndices = [];
+		for (let i = 0; i < path.length - 1; i++) {
+			lineIndices.push(i, i + 1);
+		}
+
+		const geometry = new BufferGeometry();
+		geometry.setAttribute('position', new Float32BufferAttribute(points, 3));
+		geometry.setIndex(lineIndices);
+
+		const material = new LineBasicMaterial({ color: 0x00ff00, linewidth: 100 });
+		this.pathSegments = new LineSegments(geometry, material);
+		this.container.add(this.pathSegments);
 	}
 
 
@@ -150,13 +260,6 @@ export class PointCloud {
 					z: positions.getZ(i)
 				});
 			}
-	
-			// Apply transforms
-			pcd.geometry.center();
-			pcd.rotateX(-Math.PI / 2);
-			pcd.rotateZ(-Math.PI / 2);
-			// Set position to container's center instead of hardcoded values
-			pcd.position.set(43.8, 2, 15.8);
 	
 			const sprite = new TextureLoader().load('assets/disc.png');
 			sprite.colorSpace = SRGBColorSpace;
@@ -227,10 +330,6 @@ export class PointCloud {
 	
 				console.log('connections loaded');
 	
-				lineSegments.position.set(44.0, 2.0, 15.8);
-				lineSegments.rotateX(-Math.PI / 2);
-				lineSegments.rotateZ(-Math.PI / 2);
-				lineSegments.geometry.center();
 				this.graphContainer.add(lineSegments);
 				this.connectionsReady = true;
 			})
@@ -240,16 +339,7 @@ export class PointCloud {
 	loadObj(filePath) {
 		const loader = new PCDLoader();
 		loader.load(filePath, (pcd) => {
-			pcd.geometry.center();
-			//pcd.material.size = 0.5;
-			pcd.rotateX(-Math.PI / 2);
-			pcd.rotateZ(-Math.PI/ 2);
 			pcd.material.size = 0.25;
-			//pco.scale.set(.0, 10.0, 10.0);
-			pcd.position.set(42.85, 2.5, 15.8);
-			// set color to red
-
-			console.log('obj pcd loaded');
 			this.objectContainer.add(pcd);
 		});
 	}
@@ -410,264 +500,3 @@ export class PointCloud {
 
 
 
-export class Sneaker {
-	constructor(sneakerMesh) {
-		this._uiElements = { partName: null };
-
-		this._sneakerObject = sneakerMesh;
-		this._tongueMesh = null;
-		this._backtabMesh = null;
-		this._tongueLabels = [];
-		this._backtabLabels = [];
-		this._tongueLabelBackings = [];
-
-		const uiRoot = new Group();
-
-		const configPanel = new Mesh(
-			new PlaneGeometry(0.3, 0.2025),
-			new MeshBasicMaterial({
-				color: 0xffffff,
-				map: CONFIG_PANEL_TEXTURE,
-				transparent: true,
-			}),
-		);
-		uiRoot.add(configPanel);
-
-		this._uiElements.partName = new Text();
-		this._uiElements.partName.text = 'PartName';
-		this._uiElements.partName.fontSize = 0.026;
-		this._uiElements.partName.color = 0xffffff;
-		this._uiElements.partName.anchorX = 'center';
-		this._uiElements.partName.anchorY = 'middle';
-		this._uiElements.partName.position.z = 0.001;
-		this._uiElements.partName.position.y = 0.056;
-		this._uiElements.partName.sync();
-		configPanel.add(this._uiElements.partName);
-
-		this._uiElements.colorName = new Text();
-		this._uiElements.colorName.text = 'Color';
-		this._uiElements.colorName.fontSize = 0.016;
-		this._uiElements.colorName.color = 0xffffff;
-		this._uiElements.colorName.anchorX = 'center';
-		this._uiElements.colorName.anchorY = 'middle';
-		this._uiElements.colorName.position.z = 0.001;
-		this._uiElements.colorName.position.y = 0.0025;
-		this._uiElements.colorName.sync();
-		configPanel.add(this._uiElements.colorName);
-		configPanel.position.set(0, 0.25, -0.2);
-
-		const vamp = sneakerMesh.getObjectByName('vamp');
-
-		this._uiElements.colorSwatches = [];
-		gltfLoader.load('assets/swatch.glb', (gltf) => {
-			const swatchTile = gltf.scene.getObjectByName('swatch_tile');
-			this._selectionRing = gltf.scene.getObjectByName('swatch_ring');
-			configPanel.add(this._selectionRing);
-			this._selectionRing.visible = false;
-			for (let j = 0; j < 2; ++j) {
-				for (let i = 0; i < 6; ++i) {
-					const swatch = new Mesh(
-						swatchTile.geometry,
-						new MeshStandardMaterial({
-							color: 0xffffff,
-							normalMap: vamp.material.normalMap,
-						}),
-					);
-					swatch.position.x = -0.11 + 0.044 * i;
-
-					const index = j * 6 + i;
-					this.updateMaterial(swatch.material, LeatherMaterials[index]);
-					swatch.material.roughness = 0.0;
-					swatch.material.metalness = 0.1;
-					swatch.name = 'color-swatch';
-					swatch.userData.material_index = index;
-					swatch.visible = false;
-
-					this._uiElements.colorSwatches.push(swatch);
-					configPanel.add(swatch);
-				}
-			}
-		});
-
-		this._shoeParts = {};
-		this._intersectParts = [];
-
-		Object.entries(SHOE_PART_CONFIG_OPTIONS).forEach(
-			([partName, configOptions]) => {
-				this._shoeParts[partName] = {
-					primary: sneakerMesh.getObjectByName(partName),
-				};
-				this._intersectParts.push(this._shoeParts[partName].primary);
-				if (configOptions.secondaryMaterials) {
-					this._shoeParts[partName].secondary = sneakerMesh.getObjectByName(
-						partName + '_secondary',
-					);
-					this._intersectParts.push(this._shoeParts[partName].secondary);
-				}
-				if (configOptions.stichingMaterials) {
-					this._shoeParts[partName].stiching = sneakerMesh.getObjectByName(
-						partName + '_stiching',
-					);
-				}
-				Object.values(this._shoeParts[partName]).forEach((node) => {
-					node.userData.colorIndex = 0;
-					node.userData.key = partName;
-					node.material.emissive.setHex(0xffffff);
-					node.material.emissiveIntensity = 0;
-				});
-			},
-		);
-
-		sneakerMesh.traverse((child) => {
-			if (child.isMesh) {
-				child.userData.colorIndex = 0;
-			}
-		});
-
-		this.setPrefab(prefabs.default);
-
-		this._shoepartSelected = null;
-		this._plane = uiRoot;
-	}
-
-	getShoeIntersect(raycaster) {
-		this._intersectParts.forEach((part) => {
-			part.material.emissiveIntensity = 0;
-		});
-		const intersect = raycaster.intersectObjects(this._intersectParts)[0];
-		if (intersect) {
-			intersect.object.material.emissiveIntensity = 0.1;
-			return {
-				partName: intersect.object.userData.key,
-				distance: intersect.distance,
-			};
-		}
-	}
-
-	setPrefab(prefab) {
-		Object.entries(prefab).forEach(([partName, materialConfig]) => {
-			Object.entries(materialConfig).forEach(([materialKey, colorIndex]) => {
-				this.updateShoePartMaterial(partName, materialKey, colorIndex);
-			});
-		});
-	}
-
-	updateShoePartMaterial(partName, materialKey, colorIndex) {
-		const material = SHOE_PART_CONFIG_OPTIONS[partName].materials[colorIndex];
-		const shoePart = this._shoeParts[partName][materialKey];
-		shoePart.material.color = material.color;
-		shoePart.material.roughness = material.roughness;
-		shoePart.material.metalness = material.metalness;
-		shoePart.material.name = material.name;
-		shoePart.userData.colorIndex = colorIndex;
-	}
-
-	updateMaterial(dest, src) {
-		dest.color = src.color;
-		dest.roughness = src.roughness;
-		dest.metalness = src.metalness;
-		dest.name = src.name;
-	}
-
-	get uiPlane() {
-		return this._plane;
-	}
-
-	get mesh() {
-		return this._sneakerObject;
-	}
-
-	createCopy() {
-		return this._sneakerObject.clone();
-	}
-
-	setShoePart(partName) {
-		this._shoepartSelected = this._sneakerObject.getObjectByName(partName);
-		this._uiElements.partName.text =
-			SHOE_PART_CONFIG_OPTIONS[partName].displayName;
-		this._uiElements.partName.sync();
-
-		this._updateColorNameUI();
-		this._updateColorSwatchesUI();
-	}
-
-	_updateColorNameUI() {
-		let mesh;
-		if (this._shoepartSelected.isMesh) {
-			mesh = this._shoepartSelected;
-		} else {
-			this._shoepartSelected.traverse((child) => {
-				if (child.isMesh) {
-					mesh = child;
-				}
-			});
-		}
-
-		if (mesh !== undefined) {
-			this._uiElements.colorName.text = mesh.material.name;
-		} else {
-			this._uiElements.colorName.text = 'Unknown';
-		}
-		this._uiElements.colorName.sync();
-	}
-
-	_updateColorSwatchesUI() {
-		// Get a mesh so we can get the materials
-		let mesh;
-		if (this._shoepartSelected.isMesh) {
-			mesh = this._shoepartSelected;
-		} else {
-			this._shoepartSelected.traverse((child) => {
-				if (child.isMesh) {
-					mesh = child;
-				}
-			});
-		}
-
-		this._selectionRing.visible = false;
-
-		const configOptions = SHOE_PART_CONFIG_OPTIONS[mesh.userData.key];
-
-		const bSingleRow = configOptions.materials.length == 6;
-		for (let i = 0; i < this._uiElements.colorSwatches.length; ++i) {
-			const swatch = this._uiElements.colorSwatches[i];
-			if (i < configOptions.materials.length) {
-				swatch.visible = true;
-				swatch.position.z = 0;
-				this.updateMaterial(swatch.material, configOptions.materials[i]);
-				if (bSingleRow) {
-					swatch.position.y = -0.052;
-				} else {
-					swatch.position.y = i > 5 ? -0.074 : -0.03;
-				}
-				if (i == mesh.userData.colorIndex) {
-					this._selectionRing.position.copy(swatch.position);
-					this._selectionRing.visible = true;
-				}
-			} else {
-				swatch.position.z = -0.5;
-				swatch.visible = false;
-			}
-		}
-	}
-
-	update(colorIndex, justClicked) {
-		if (justClicked && this._shoepartSelected) {
-			this._shoepartSelected.traverse((child) => {
-				if (child.isMesh) {
-					child.userData.colorIndex = colorIndex;
-					const srcMat =
-						SHOE_PART_CONFIG_OPTIONS[this._shoepartSelected.name].materials[
-							colorIndex
-						];
-					if (srcMat) {
-						this.updateMaterial(child.material, srcMat);
-					}
-				}
-			});
-
-			this._updateColorNameUI();
-			this._updateColorSwatchesUI();
-		}
-	}
-}

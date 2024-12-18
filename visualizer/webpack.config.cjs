@@ -60,7 +60,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: 'src/assets', to: 'assets' },
-        { from: '/mnt/gpu02_data0/ros/documents/data_proc/data19/web', to: 'data19' },
+        { from: '/workspace/data_proc/skypark/web', to: 'scene_data' },
         //{ from : '/workspace/data_proc/data18/web', to: 'data18' },
         {
           from: 'node_modules/three/examples/jsm/libs/basis',

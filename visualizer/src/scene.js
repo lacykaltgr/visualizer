@@ -36,11 +36,11 @@ export const setupScene = () => {
 	const pmremGenerator = new PMREMGenerator(renderer);
 	pmremGenerator.compileEquirectangularShader();
 
-	exrLoader.load('assets/venice_sunset_1k.exr', (texture) => {
-		const envMap = pmremGenerator.fromEquirectangular(texture).texture;
-		pmremGenerator.dispose();
-		scene.environment = envMap;
-	});
+	//exrLoader.load('assets/venice_sunset_1k.exr', (texture) => {
+	//	const envMap = pmremGenerator.fromEquirectangular(texture).texture;
+	//	pmremGenerator.dispose();
+	//	scene.environment = envMap;
+	//});
 
 	const onResize = () => {
 		resizeCanvas(
